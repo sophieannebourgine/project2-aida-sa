@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    firstname: {
       type: String,
       required: true
     },
@@ -18,18 +18,6 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true
-    },
-    age: Number,
-    avatar: {
-      type: String,
-      default:
-        "https://vignette.wikia.nocookie.net/ghostintheshell/images/f/fe/Laughing_man.svg/revision/latest/scale-to-width-down/300?cb=20100909044445&path-prefix=en"
-    },
-    role: {
-      type: String,
-      enum: ["admin", "user"],
-      required: true,
-      default: "user"
     }
   },
   {

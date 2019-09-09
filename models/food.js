@@ -8,22 +8,27 @@ const productSchema = new Schema({
   },
   ref: {
     type: String,
-    required: true,
-    validate: [
-      val => /^ref\d{6}([A-Z]{1})$/.test(val),
-      "the provided reference is not valid"
-    ]
+    required: true
   },
+
+  description: {
+    type: String,
+    required: true
+  },
+
   price: {
     type: String,
     required: true
   },
   category: {
-    type: Schema.Types.ObjectId,
-    ref: "Category"
-    // how to link document from different collections ?
-    // tells Mongoose this ID connects to the "Category" model
+    type: String,
+    enum: ["men", "women", "kids"]
   },
+
+  id_tags: {
+    type: Schema.Types.ObjectId
+  },
+
   image: {
     type: String,
     default:
