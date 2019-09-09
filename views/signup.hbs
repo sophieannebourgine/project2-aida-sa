@@ -9,24 +9,25 @@
   <form method="post" action="/signup" id="form_user">
     <div class="form-item-wrapper flexed-item">
       <label for="firstname" class="label-ref label">Name</label>
-      <input id="firstname" type="text" class="input-text input" placeholder="Your first name" required
-        value="Your first name">
+      <input id="firstname" type="text" class="input-text input" placeholder="Your first name" name="firstname" value:""
+        required>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="lastname" class="label-ref label">Last Name</label>
-      <input id="lastname" type="text" class="input-text input" placeholder="Your last name" required
-        value="Your last name">
+      <input id="lastname" type="text" class="input-text input" name="lastname" placeholder="Your last name" value:""
+        required>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="email" class="label-ref label">Email</label>
-      <input id="email" type="email" class="input-text input" placeholder="example@gmail.com" required
-        value="example@gmail.com">
+      <input id="email" type="email" class="input-text input" name="email" placeholder="example@gmail.com" value:""
+        required>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="password" class="label-ref label">Password</label>
-      <input id="password" type="password" class="input-text input" placeholder="••••••" required value="1234">
+      <input id="password" type="password" class="input-text input" name="password" value:"" placeholder="••••••"
+        required>
     </div>
-    <button class="button-primary white">Create Account</button>
+    <button class="button-primary white">Create Account <a href="/signin"></a></button>
   </form>
   <p class="form-sub-infos">Already have an account ? <a href="/signin" class="button-link-form">Sign In</a></p>
 </section>
