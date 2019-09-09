@@ -61,7 +61,7 @@ router.post("/signin", (req, res, next) => {
   const thePassword = req.body.password;
 
   if (theEmail === "" || thePassword === "") {
-    res.render("/signin", {
+    res.render("signin", {
       errorMessage: "Please enter both, username and password to sign up."
     });
     return;
@@ -70,7 +70,7 @@ router.post("/signin", (req, res, next) => {
   User.findOne({ email: theEmail })
     .then(user => {
       if (!user) {
-        res.render("/signin", {
+        res.render("signin", {
           errorMessage: "The username doesn't exist."
         });
         return;
@@ -78,9 +78,10 @@ router.post("/signin", (req, res, next) => {
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
+
         res.redirect("/");
       } else {
-        res.render("/signin", {
+        res.render("signin", {
           errorMessage: "Incorrect password"
         });
       }
@@ -95,7 +96,7 @@ router.post("/signin", (req, res, next) => {
 router.get("/logout", (req, res, next) => {
   req.session.destroy(err => {
     // can't access session here
-    res.redirect("/signin");
+    res.redirect("/auth/signin");
   });
 });
 
