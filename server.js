@@ -72,12 +72,15 @@ app.use(checkloginStatus);
 app.use(eraseSessionMessage());
 
 // Getting/Using router(s)
+
 const basePageRouter = require("./routes/index");
 app.use("/", basePageRouter);
+
 const authRouter = require("./routes/auth");
-// const productsAddRouter = require("./routes/dashboard_food");
-app.use("/", authRouter);
-// app.use("/", productsAddRouter);
+app.use("/auth", authRouter);
+
+const productsAddRouter = require("./routes/dashboard_food");
+app.use("/products", productsAddRouter);
 
 const listener = app.listen(process.env.PORT, () => {
   console.log(`app started at ${process.env.SITE_URL}:${process.env.PORT}`);

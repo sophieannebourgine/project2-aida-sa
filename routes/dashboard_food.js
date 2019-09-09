@@ -3,15 +3,38 @@ const router = new express.Router(); // create an app sub-module (router)
 const Food = require("../models/food");
 const uploader = require("./../config/cloudinary");
 
-//--------- PRODUCTS ADD "ADD TO COLLECTION"
-router.get("/prod-add", (req, res) => {
-  res.render("products_add");
+// AFFICHER TOUS LES PRODUITS
+
+router.get("/", (req, res) => {
+  Food.find()
+    .then()
+    .catch();
+  res.render("all products");
+  console.log("ici");
 });
 
-router.post("/prod-add", uploader.single("image"), (req, res, next) => {
+//AFFICHER PRODUIT SELON CATEGORIE
+
+router.get("/:cat", (req, res) => {
+  if (req.params.cat == "all") {
+    Food.find()
+      .then(dbRes => {
+        res.render("products", { food: dbRes });
+      })
+      .catch(dbErr => console.log(dbErr));
+  } else {
+    Food.find({ category: req.params.cat })
+      .then(dbRes => {
+        res.render("products", { food: dbRes });
+      })
+      .then(dbErr => console.log(dbErr));
+  }
+});
+
+//--------- PRODUCTS ADD "ADD TO COLLECTION"
+router.post("/", uploader.single("image"), (req, res, next) => {
   const name = req.body.name;
   const ref = req.body.ref;
-  // const sizes = req.body.sizes;
   const description = req.body.description;
   const price = req.body.price;
   const category = req.body.category;
@@ -39,7 +62,7 @@ router.post("/prod-add", uploader.single("image"), (req, res, next) => {
 
   Food.create(newItem)
     .then(() => {
-      return res.redirect("/cafe/all");
+      return res.redirect("/all");
     })
     .catch(error => {
       console.log(error);

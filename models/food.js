@@ -25,10 +25,6 @@ const productSchema = new Schema({
     enum: ["sweet", "salt", "drink"]
   },
 
-  // id_tags: {
-  //   type: Schema.Types.ObjectId
-  // },
-
   image: {
     type: String,
     default:
