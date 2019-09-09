@@ -29,11 +29,11 @@
         Take advantage of signature a footwear technologies including Zoom, Flyknite, and find the
         pairs running shoes that align with your running philosophy.</p>
     </div>
-    {{#unless sneakers}}
-    <p>Sorry, no sneakers yet !</p>
+    {{#unless products}}
+    <p>Sorry, no products yet !</p>
     {{/unless}}
     <div id="products_grid" class="products-grid flexed-item">
-      {{#each sneakers}}
+      {{#each products}}
       {{> sneaker_mini }}
       {{/each}}
     </div>

@@ -1,13 +1,13 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
 
-const tagSchema = new Schema({
-  label: {
-    type: String,
-    required: true
-  }
-});
+// const tagSchema = new Schema({
+//   label: {
+//     type: String,
+//     required: true
+//   }
+// });
 
-const tagModel = mongoose.model("Tag", tagSchema);
+// const tagModel = mongoose.model("Tag", tagSchema);
 
-module.exports = tagModel;
+// module.exports = tagModel;

@@ -22,12 +22,12 @@ const productSchema = new Schema({
   },
   category: {
     type: String,
-    enum: ["men", "women", "kids"]
+    enum: ["sweet", "salt", "drink"]
   },
 
-  id_tags: {
-    type: Schema.Types.ObjectId
-  },
+  // id_tags: {
+  //   type: Schema.Types.ObjectId
+  // },
 
   image: {
     type: String,
