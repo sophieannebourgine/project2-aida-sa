@@ -31,8 +31,12 @@ router.get("/:cat", (req, res) => {
   }
 });
 
-//--------- PRODUCTS ADD "ADD TO COLLECTION"
-router.post("/", uploader.single("image"), (req, res, next) => {
+//--------- PRODUCTS "ADD TO COLLECTION"
+router.get("/prod-add", (req, res) => {
+  res.render("products_add");
+});
+
+router.post("/prod-add", uploader.single("image"), (req, res, next) => {
   const name = req.body.name;
   const ref = req.body.ref;
   const description = req.body.description;

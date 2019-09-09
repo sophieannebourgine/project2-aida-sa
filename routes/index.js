@@ -14,6 +14,10 @@ router.get("/one-product/:id", (req, res) => {
   res.render("one_product");
 });
 
+router.get("/prod-add", (req, res) => {
+  res.render("products_add");
+});
+
 // router.get("/signup", (req, res) => {
 //   res.render("signup");
 // });
@@ -21,10 +25,6 @@ router.get("/one-product/:id", (req, res) => {
 // router.get("auth/signin", (req, res) => {
 //   res.render("signin");
 // });
-
-router.get("/prod-add", (req, res) => {
-  res.render("products_add");
-});
 
 router.get("/prod-manage", (req, res) => {
   Food.find()
