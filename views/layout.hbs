@@ -6,9 +6,19 @@
 </head>
 
 <body>
-  {{> shop_nav}}
-  {{{body}}}
-  {{> shop_footer}}
+  <header id="header_main">
+    {{> icon_mobile }}
+
+    {{> shop_nav}}
+  </header>
+  {{> shop_nav_mobile }}
+  <main id="main_content">
+    {{> side_main}}
+    {{{ body }}}
+  </main>
+
+  {{> icon_mobile }}
 </body>
+{{> shop_footer}}
 
 </html>
