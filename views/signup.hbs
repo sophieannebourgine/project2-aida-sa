@@ -6,7 +6,7 @@
   {{#if msg}}
   <p class="message {{msg.status}}">{{msg.text}}</p>
   {{/if}}
-  <form method="post" action="/signup" id="form_user">
+  <form method="post" action="/auth/signup" id="form_user">
     <div class="form-item-wrapper flexed-item">
       <label for="firstname" class="label-ref label">Name</label>
       <input id="firstname" type="text" class="input-text input" placeholder="Your first name" name="firstname" value:""
@@ -27,7 +27,7 @@
       <input id="password" type="password" class="input-text input" name="password" value:"" placeholder="••••••"
         required>
     </div>
-    <button class="button-primary white">Create Account <a href="/signin"></a></button>
+    <button class="button-primary white">Create Account <a href="/auth/signin"></a></button>
   </form>
-  <p class="form-sub-infos">Already have an account ? <a href="/signin" class="button-link-form">Sign In</a></p>
+  <p class="form-sub-infos">Already have an account ? <a href="/auth/signin" class="button-link-form">Sign In</a></p>
 </section>

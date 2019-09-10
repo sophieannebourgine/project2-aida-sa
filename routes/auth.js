@@ -5,8 +5,10 @@ const bcryptSalt = 10;
 
 const User = require("../models/User");
 
+//------ SIGN UP
+
 router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
+  res.render("signup");
 });
 
 router.post("/signup", (req, res, next) => {
@@ -16,14 +18,14 @@ router.post("/signup", (req, res, next) => {
   const password = req.body.password;
 
   if (firstname === "" || password === "") {
-    res.render("auth/signup", {
+    res.render("signup", {
       errorMessage: "Indicate a username and a password to sign up"
     });
     return;
   }
   User.findOne({ firstname: firstname }).then(user => {
     if (user !== null) {
-      res.render("auth/signup", {
+      res.render("signup", {
         errorMessage: "The username already exists!"
       });
       return;
@@ -48,10 +50,10 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
-//signin
+//------ SIGN IN
 
 router.get("/signin", (req, res, next) => {
-  res.render("auth/signin");
+  res.render("signin");
 });
 
 router.post("/signin", (req, res, next) => {
@@ -59,7 +61,7 @@ router.post("/signin", (req, res, next) => {
   const thePassword = req.body.password;
 
   if (theEmail === "" || thePassword === "") {
-    res.render("auth/signin", {
+    res.render("signin", {
       errorMessage: "Please enter both, username and password to sign up."
     });
     return;
@@ -68,7 +70,7 @@ router.post("/signin", (req, res, next) => {
   User.findOne({ email: theEmail })
     .then(user => {
       if (!user) {
-        res.render("auth/signin", {
+        res.render("signin", {
           errorMessage: "The username doesn't exist."
         });
         return;
@@ -76,9 +78,10 @@ router.post("/signin", (req, res, next) => {
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
+
         res.redirect("/");
       } else {
-        res.render("auth/signin", {
+        res.render("signin", {
           errorMessage: "Incorrect password"
         });
       }
@@ -88,10 +91,12 @@ router.post("/signin", (req, res, next) => {
     });
 });
 
+//----- LOG OUT
+
 router.get("/logout", (req, res, next) => {
   req.session.destroy(err => {
     // can't access session here
-    res.redirect("/signin");
+    res.redirect("/auth/signin");
   });
 });
 
