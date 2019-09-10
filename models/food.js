@@ -20,6 +20,11 @@ const productSchema = new Schema({
     type: String,
     required: true
   },
+
+  stock: {
+    type: Number,
+    required: true
+  },
   category: {
     type: String,
     enum: ["sweet", "salt", "drink"]

@@ -12,7 +12,11 @@ router.get(["/", "/home"], (req, res) => {
 //-----------AFFICHER LES PRODUITS
 
 router.get("/one-product/:id", (req, res) => {
-  res.render("one_product");
+  Food.findById(req.params.id)
+    .then(dbRes => {
+      res.render("one_product", { food: dbRes });
+    })
+    .catch(dbErr => console.log(dbErr));
 });
 
 // router.get("/signup", (req, res) => {
