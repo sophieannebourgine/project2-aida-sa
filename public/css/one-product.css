@@ -1,16 +1,22 @@
 .one-product-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   height: calc(100vh - (84px));
 }
 .one-product-container > * {
   margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .sneak-info-header {
-  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .sneak-name {
@@ -38,9 +44,24 @@
 }
 
 .sneak-img-container {
-  width: 35%;
+  display: grid;
+  grid-template-columns: 35% 60%;
+  grid-template-rows: 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 2%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .sneak-img {
+  height: 100%;
+}
+
+#main-content {
   width: 100%;
+  background-image: url("https://res.cloudinary.com/duehv29iq/image/upload/v1568131411/p-p_dqjyro.png");
+}
+
+.button-primary {
+  width: 136px;
 }
