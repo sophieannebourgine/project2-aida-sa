@@ -1,29 +1,25 @@
 const express = require("express"); // import express in this module
 const router = new express.Router(); // create an app sub-module (router)
-const Food = require("../models/food");
-const uploader = require("./../config/cloudinary");
+const foodModel = require("../models/food");
+const cloudinary = require("./../config/cloudinary");
 
-// AFFICHER TOUS LES PRODUITS
+//AFFICHER TOUS LES PRODUITS ET SELON CATEGORIES
 
-router.get("/", (req, res) => {
-  Food.find()
-    .then()
-    .catch();
-  res.render("all products");
-  console.log("ici");
+router.get("/prod-add", (req, res) => {
+  res.render("products_add");
 });
-
-//AFFICHER PRODUIT SELON CATEGORIE
 
 router.get("/:cat", (req, res) => {
   if (req.params.cat == "all") {
-    Food.find()
+    foodModel
+      .find()
       .then(dbRes => {
         res.render("products", { food: dbRes });
       })
       .catch(dbErr => console.log(dbErr));
   } else {
-    Food.find({ category: req.params.cat })
+    foodModel
+      .find({ category: req.params.cat })
       .then(dbRes => {
         res.render("products", { food: dbRes });
       })
@@ -32,11 +28,8 @@ router.get("/:cat", (req, res) => {
 });
 
 //--------- PRODUCTS "ADD TO COLLECTION"
-router.get("/prod-add", (req, res) => {
-  res.render("products_add");
-});
 
-router.post("/prod-add", uploader.single("image"), (req, res, next) => {
+router.post("/prod-add", cloudinary.single("image"), (req, res) => {
   const name = req.body.name;
   const ref = req.body.ref;
   const description = req.body.description;
@@ -58,15 +51,13 @@ router.post("/prod-add", uploader.single("image"), (req, res, next) => {
     category
   };
 
-  if (req.file) {
-    newItem.image = req.file.secure_url;
-  } else {
-    console.log("Problem");
-  }
+  //   newItem.picPath = req.file.secure_url;
+  if (req.file) newItem.image = req.file.secure_url;
 
-  Food.create(newItem)
+  foodModel
+    .create(newItem)
     .then(() => {
-      return res.redirect("/all");
+      return res.redirect("/products/all");
     })
     .catch(error => {
       console.log(error);
@@ -74,6 +65,32 @@ router.post("/prod-add", uploader.single("image"), (req, res, next) => {
         errorMessage: "Duplicate ref, please update form !"
       });
     });
+});
+
+//-------------- EDITER PRODUITS
+
+router.post("/edit/:id", (req, res) => {
+  const { name, ref, description, price, category } = req.body;
+  const editItem = {
+    name,
+    ref,
+    description,
+    price,
+    category
+  };
+  foodModel
+    .findByIdAndUpdate(req.params.id, editItem)
+    .then(dbRes => res.redirect("/manage-products"))
+    .catch(err => console.log(err));
+});
+
+//-------------- SUPPRIMER PRODUITS
+
+router.get("/delete/:id", (req, res) => {
+  foodModel
+    .findByIdAndRemove(req.params.id)
+    .then(dbRes => res.redirect("/manage-products"))
+    .catch(err => console.log(err));
 });
 
 module.exports = router;

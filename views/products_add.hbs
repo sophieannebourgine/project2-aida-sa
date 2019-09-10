@@ -1,38 +1,38 @@
 <div class="big-container product-manage-wrapper flexed-item">
-  <form action="/products/prod-add" method="post" class="add-product-form" enctype="multiparty/form-data">
-    {{#if msg}}
-    <p class="msg {{msg.statut}}">{{msg.txt}}</p>
+  <form action="/products/prod-add" method="POST" class="add-product-form" enctype="multipart/form-data">
+    {{#if errorMessage}}
+    <p class="msg {{msg.statut}}">{{errorMessage.txt}}</p>
     {{/if}}
-    <h3 class="form-title">Add Products to the invotary</h3>
+    <h3 class="form-title">Add Products</h3>
     <div class="form-item-wrapper flexed-item">
       <label for="product-name" class="label-name label"> Name</label>
-      <input id="product-name" type="text" class="input-text input" placeholder="Hungry ?">
+      <input id="product-name" type="text" class="input-text input" placeholder="Hungry ?" name="name" required>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="product-ref" class="label-ref label">Réf.</label>
-      <input id="product-ref" type="text" class="input-text input" placeholder="ex: CHOC23">
+      <input id="product-ref" type="text" class="input-text input" placeholder="ex: CHOC23" name="ref" required>
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="product-descr" class="label-descr label">Description</label>
-      <input id="product-descr" type="text" class="input-text input" placeholder="Have a break">
+      <input id="product-descr" type="text" class="input-text input" placeholder="Have a break" name="description">
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="product-price" class="label-price label">Price</label>
-      <input id="product-price" type="number" class="product-price input" min="1">
+      <input id="product-price" type="number" class="product-price input" min="1" name="price">
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="product-img" class="label-price label">Image</label>
-      <input id="product-img" type="file" class="sneacker-price input">
+      <input id="product-img" type="file" class="sneacker-price input" name="image">
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="category" class="label-main-cat label">Main category</label>
-      <select id="category" class="select" required>
+      <select id="category" class="select" name="category" required>
         <option value="-1" disabled selected>Choose a category</option>
         <option value="sweet">Sweet snacks</option>
         <option value="salt">Salty snacks</option>
         <option value="drink">Drinks</option>
       </select>
     </div>
-    <button class="button-primary add-sneacker-btn">Add to invotary</button>
+    <button class="button-primary add-sneacker-btn">Add products</button>
   </form>
 </div>
