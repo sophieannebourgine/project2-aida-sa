@@ -1,26 +1,27 @@
 <div class="big-container manage-products-wrapper">
-  <h3 class="manage-products-title">Manage your Sneakers catalog</h3>
+  <h3 class="manage-products-title">Manage your Products stock</h3>
   <table class="product-manage-table">
     <thead>
       <tr class="table-row">
-        <th class="table-head">Sneaker Image</th>
-        <th class="table-head">Sneaker Name</th>
-        <th class="table-head">Sneaker Ref</th>
-        <th class="table-head">Sneaker Prixe</th>
+        <th class="table-head">Product Image</th>
+        <th class="table-head">Product Name</th>
+        <th class="table-head">Product Ref</th>
+        <th class="table-head">Product Price</th>
+        <th class="table-head">Product Stock</th>
         <th class="table-head">Edit</th>
         <th class="table-head">Delete</th>
       </tr>
     </thead>
 
     <tbody>
-      {{#each sneakers}}
+      {{#each food}}
       <tr class="table-row">
-        {{> dashboard_sneaker_row}}
+        {{> dashboard_food_row}}
       </tr>
       {{/each}}
-      {{#unless sneakers}}
+      {{#unless food}}
       <tr>
-        <td colspan="6">sorry no sneakers yet</td>
+        <td colspan="6">sorry no products yet</td>
       </tr>
       {{/unless}}
     </tbody>

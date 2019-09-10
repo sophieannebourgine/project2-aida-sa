@@ -23,17 +23,18 @@
         {{#compare category "collection" operator="!="}}
         {{category}}
         {{/compare}}
-        collection <span id="products_count" class="products-count">({{products.length}})</span>
+        All <span id="products_count" class="products-count">({{food.length}})</span>
       </h4>
       <p class="products-subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam eos placeat,
         similique magni architecto rem itaque eveniet dignissimos explicabo quam nam fugiat eligendi porro neque, qui
         quisquam consequatur ea voluptatibus..</p>
     </div>
-    {{#unless products}}
+    {{#unless food}}
     <p>Sorry, no products yet !</p>
     {{/unless}}
+
     <div id="products_grid" class="products-grid flexed-item">
-      {{#each products}}
+      {{#each food}}
       {{> food_mini }}
       {{/each}}
     </div>
