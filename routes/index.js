@@ -1,6 +1,7 @@
 const express = require("express");
 const router = new express.Router();
 const Food = require("../models/food");
+const User = require("../models/User");
 
 //------ HOMEPAGE
 
@@ -34,4 +35,19 @@ router.get("/prod-manage", (req, res) => {
     .catch(dbErr => console.log(dbErr));
 });
 
+router.get("/user", (req, res) => {
+  // User.find()
+  //   .then(dbRes => {
+  res.render("user");
+  //   })
+  //   .catch(dbErr => console.log(dbErr));
+});
+
+router.get("/cart", (req, res) => {
+  // User.find()
+  //   .then(dbRes => {
+  res.render("cart");
+  //   })
+  //   .catch(dbErr => console.log(dbErr));
+});
 module.exports = router;

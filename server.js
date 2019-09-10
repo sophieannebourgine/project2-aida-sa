@@ -68,6 +68,14 @@ function eraseSessionMessage() {
   };
 }
 
+function setCurrentUser(req, res, next) {
+  if (req.session.currentUser) {
+    res.locals.user = req.session.currentUser;
+  }
+  res.locals.user = null;
+  next();
+}
+app.use(setCurrentUser);
 app.use(checkloginStatus);
 app.use(eraseSessionMessage());
 
