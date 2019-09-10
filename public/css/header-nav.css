@@ -79,8 +79,6 @@ h2.logo-item {
   font-weight: 400;
 }
 
-
-
 .shop-cart-icon:hover {
   color: black;
   cursor: pointer;
@@ -203,13 +201,13 @@ a.link {
 
 @media (max-width: 620px) {
   /* #side-main { */
-    /* display: none; */
+  /* display: none; */
   /* } */
   /* #header_main .icon.mobile { */
   /* display: none; */
-/* } */
+  /* } */
 
-/* #nav_sidebar {
+  /* #nav_sidebar {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -218,6 +216,7 @@ a.link {
   justify-content: center;
 } */
 
-.i.icon.mobile.fa.fa-bars {
-  display: none;
+  .i.icon.mobile.fa.fa-bars {
+    display: none;
+  }
 }
