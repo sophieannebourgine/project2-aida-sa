@@ -50,8 +50,6 @@ router.post("/prod-add", cloudinary.single("image"), (req, res) => {
     price,
     category
   };
-
-  //   newItem.picPath = req.file.secure_url;
   if (req.file) newItem.image = req.file.secure_url;
 
   foodModel
@@ -65,32 +63,6 @@ router.post("/prod-add", cloudinary.single("image"), (req, res) => {
         errorMessage: "Duplicate ref, please update form !"
       });
     });
-});
-
-//-------------- EDITER PRODUITS
-
-router.post("/edit/:id", (req, res) => {
-  const { name, ref, description, price, category } = req.body;
-  const editItem = {
-    name,
-    ref,
-    description,
-    price,
-    category
-  };
-  foodModel
-    .findByIdAndUpdate(req.params.id, editItem)
-    .then(dbRes => res.redirect("/manage-products"))
-    .catch(err => console.log(err));
-});
-
-//-------------- SUPPRIMER PRODUITS
-
-router.get("/delete/:id", (req, res) => {
-  foodModel
-    .findByIdAndRemove(req.params.id)
-    .then(dbRes => res.redirect("/manage-products"))
-    .catch(err => console.log(err));
 });
 
 module.exports = router;
