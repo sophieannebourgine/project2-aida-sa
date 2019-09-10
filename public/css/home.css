@@ -1,8 +1,10 @@
 .home-container {
   height: calc(100vh - (84px));
   overflow: hidden;
-  /* display: flex; */
-  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: black;
   width: 100%;
   background-image: url("https://res.cloudinary.com/duehv29iq/image/upload/v1568020400/igor-starkov-j3e5c72LAuc-unsplash_t4dzsg.jpg");
@@ -11,6 +13,46 @@
   background-position: center;
 }
 
-/* .img-home {
-  width: 60%;
-} */
+.button-view {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: rosybrown;
+  opacity: 5;
+  color: white;
+  font-size: 18px;
+  font-weight: bolder;
+  z-index: 999;
+  width: 100px;
+}
+
+.square-hp {
+  background-color: gray;
+  opacity: 0.8;
+  min-width: 470px;
+  max-width: 270px;
+  min-height: 270px;
+  max-height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  align-items: center;
+  align-content: center;
+}
+
+.bloc-hp {
+  padding: 60px;
+  color: white;
+  font-size: 23px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
