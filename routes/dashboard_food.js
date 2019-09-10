@@ -10,7 +10,7 @@ router.get("/prod-add", (req, res) => {
 });
 
 router.get("/:cat", (req, res) => {
-  if (req.params.cat == "products") {
+  if (req.params.cat == "all") {
     foodModel
       .find()
       .then(dbRes => {
