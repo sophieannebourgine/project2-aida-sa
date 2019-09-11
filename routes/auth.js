@@ -23,7 +23,7 @@ router.post("/signup", (req, res, next) => {
     return;
   }
   User.findOne({ firstname: firstname }).then(user => {
-    if (user !== null) {
+    if (!user) {
       res.render("signup", { msg: { text: "Incorrect email or password" } });
       return;
     }
