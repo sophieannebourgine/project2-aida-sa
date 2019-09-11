@@ -1,32 +1,30 @@
-<div class="one-product-container">
-  <form action="/cart" method="POST" enctype="multipart/form-data">
-    <div class="sneak-info">
-      <div class="sneak-info-header">
-        <h1 class="sneak-name">{{food.name}}</h1>
-        <p class="sneak-description">{{food.description}}</p>
-        <p class="sneak-ref">Ref. {{food.ref}}</p>
+<main id="main-content">
+
+  <div class="sneak-img-container">
+    <img src="{{food.image}}" alt="img-product" class="sneak-img">
+
+
+    <div class="one-product-container">
+      <div class="sneak-info">
+        <div class="sneak-info-header">
+          <h1 class="sneak-name">{{food.name}}</h1>
+          <p class="sneak-description">{{food.description}}</p>
+          <p class="sneak-ref">Ref. {{food.ref}}</p>
+        </div>
       </div>
-    </div>
 
-
-    <div class="sneak-img-container">
-      <img src="{{food.image}}" alt="img-product" class="sneak-img">
-    </div>
-
-    {{#if isLoggedIn}}
-    <div class="flexed-item">
-      <select name="main-category" id="main_category" class="select sneak-select" required>
-        <option value="">How many ?</option>
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-      </select>
-      <a href="/cart" class="button-primary a-link">Add to cart <i
-          class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
-
-      {{/if}}
+      <div class="flexed-item">
+        <select name="main-category" id="main_category" class="select sneak-select">
+          <option value="">How many ?</option>
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+        </select>
+      </div>
+      <a href="" class="button-primary a-link">Add to cart <i class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
 
     </div>
 
-  </form>
-</div>
+  </div>
+
+</main>
