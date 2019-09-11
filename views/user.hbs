@@ -1,13 +1,27 @@
-<h1>Personal information</h1>
-<h2>Here you can see your information, and edit them</h2>
-
-<ul>
-    <li>First name: {{ user.firstname}}</li>
-    <li>Last name:{{ user.lastname}}</li>
-    <li>Email {{ user.email}}</li>
-    <li>Password:{{ user.password}}</li>
-
-</ul>
-
-<button>Save</button>
-<button>Cancel</button>
+<div class="big-container product-manage-wrapper flexed-item">
+    <form action="/products/prod-add" method="POST" class="add-product-form" enctype="multipart/form-data">
+        <h3 class="form-title">Personal information</h3>
+        <div class="form-item-wrapper flexed-item">
+            <label for="user-firstname" class="label-firstname label"> Firstname</label>
+            <input id="user-firstname" type="text" class="input-text input" placeholder="Firstname" name="firstname"
+                value="{{user.firstname}}" required>
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="user-lastname" class="label-lastname label"> Lastname</label>
+            <input id="user-lastname" type="text" class="input-text input" placeholder="Lastname" name="lastname"
+                value="{{user.lastname}}" required>
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="user-email" class="label-email label">Email</label>
+            <input id="user-email" type="text" class="input-text input" placeholder="Email" name="email"
+                value="{{user.email}}" required>
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="user-password" class="label-password label">Password</label>
+            <input id="user-password" type="password" class="input-text input" placeholder="•••••" name="password"
+                value="{{user.password}}">
+        </div>
+        <button type="submit" class="button-primary add-sneacker-btn">Save</button>
+        <button class="button-primary select sneak-select">Cancel</button>
+    </form>
+</div>
