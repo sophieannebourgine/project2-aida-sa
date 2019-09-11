@@ -60,7 +60,7 @@ const ironCart = (function() {
     );
     const valToAdd = Number(document.getElementById("main_category").value);
     const newQty = cartCount + valToAdd;
-    const prodId = document.getElementById("prod_id").value;
+    const prodId = document.getElementById("main_category").value;
     document.getElementById("quantity-total").textContent = newQty;
     updateDatabase(prodId, newQty);
   }

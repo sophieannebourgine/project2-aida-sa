@@ -15,7 +15,7 @@ router.get("/one-product/:id", (req, res) => {
   foodModel
     .findById(req.params.id)
     .then(dbRes => {
-      res.render("one_product", { food: dbRes });
+      res.render("one_product", { food: dbRes, scripts: ["cart.js"] });
     })
     .catch(dbErr => console.log(dbErr));
 });
