@@ -11,6 +11,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: absolute;
 }
 
 .button-view {
@@ -18,13 +19,20 @@
   padding-right: 20px;
   margin-left: 20px;
   margin-top: 20px;
-  background-color: rosybrown;
-  opacity: 5;
+  background-color: #f5ae02;
+  opacity: 1;
   color: white;
   font-size: 18px;
   font-weight: bolder;
-  z-index: 999;
+  z-index: 9999;
   width: 100px;
+}
+
+.button-view:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }
 
 .square-hp {
@@ -42,6 +50,8 @@
   color: white;
   align-items: center;
   align-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .bloc-hp {
@@ -55,4 +65,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  position: absolute;
+  z-index: 999;
+  text-align: center;
 }
