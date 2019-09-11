@@ -18,16 +18,12 @@ router.post("/signup", (req, res, next) => {
   const password = req.body.password;
 
   if (firstname === "" || password === "") {
-    res.render("signup", {
-      errorMessage: "Indicate a username and a password to sign up"
-    });
+    res.render("signup", { msg: { text: "This email adress is already use" } });
     return;
   }
   User.findOne({ firstname: firstname }).then(user => {
     if (user !== null) {
-      res.render("signup", {
-        errorMessage: "The username already exists!"
-      });
+      res.render("signup", { msg: { text: "Incorrect email or password" } });
       return;
     }
   });
@@ -62,7 +58,7 @@ router.post("/signin", (req, res, next) => {
 
   if (theEmail === "" || thePassword === "") {
     res.render("signin", {
-      errorMessage: "Please enter both, username and password to sign up."
+      msg: { text: "Please enter both, username and password to sign up." }
     });
     return;
   }
@@ -71,7 +67,7 @@ router.post("/signin", (req, res, next) => {
     .then(user => {
       if (!user) {
         res.render("signin", {
-          errorMessage: "The username doesn't exist."
+          msg: "The username doesn't exist."
         });
         return;
       }
@@ -81,9 +77,7 @@ router.post("/signin", (req, res, next) => {
 
         res.redirect("/");
       } else {
-        res.render("signin", {
-          errorMessage: "Incorrect password"
-        });
+        res.render("signin", { msg: { text: "Incorrect password" } });
       }
     })
     .catch(error => {

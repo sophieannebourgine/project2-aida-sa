@@ -20,6 +20,17 @@ router.get("/one-product/:id", (req, res) => {
     .catch(dbErr => console.log(dbErr));
 });
 
+//------------ADD TO CART
+
+router.post("/one-product/:id", (req, res) => {
+  foodModel
+    .findById(req.params.id)
+    .then(dbRes => {
+      res.render("cart", { food: dbRes });
+    })
+    .catch(dbErr => console.log(dbErr));
+});
+
 //-------------- EDITER PRODUITS
 
 router.get("/prod-manage", (req, res) => {

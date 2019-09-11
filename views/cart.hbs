@@ -4,3 +4,36 @@
             <a href="/products/all"> <button class="button-view">View products</button></a></span>
     </div>
 </div>
+
+<div class="big-container manage-products-wrapper">
+    <h3 class="manage-products-title">Found something good ? </h3>
+    <table class="product-manage-table">
+        <thead>
+            <tr class="table-row">
+                <th class="table-head">Image</th>
+                <th class="table-head">Name</th>
+                <th class="table-head">Ref</th>
+                <th class="table-head">Price</th>
+                <th class="table-head">Quantity</th>
+                <th class="table-head">Edit</th>
+                <th class="table-head">Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each food}}
+            <tr class="table-row">
+                {{> dashboard_food_row}}
+            </tr>
+            {{/each}}
+            {{#unless food}}
+            <tr>
+                <td colspan="6">sorry no products yet</td>
+            </tr>
+            {{/unless}}
+        </tbody>
+    </table>
+
+    <a href="/" class="button-primary a-link" type="submit">Come pick them up ASAP
+        <i class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
+</div>
