@@ -1,3 +1,7 @@
+#main_content {
+  position: relative;
+}
+
 .header {
   width: 100%;
 }
@@ -50,7 +54,7 @@ h2.logo-item {
 }
 
 .nav-item:hover {
-  box-shadow: inset 0 -3px 0 0 #111;
+  box-shadow: inset 0 -3px 0 0 #f5ae02;
 }
 
 .nav-item-admin {
@@ -91,7 +95,8 @@ h2.logo-item {
   transition: all 0.2s ease-in;
 }
 
-i.icon.mobile.fa.fa-bars {
+i.icon {
+  visibility: hidden;
   display: flex;
   align-items: center;
   width: 30px;
@@ -100,6 +105,7 @@ i.icon.mobile.fa.fa-bars {
 #header_main .icon {
   cursor: pointer;
 }
+/*_________NAV MOBILE________*/
 
 #nav_mobile {
   position: fixed;
@@ -123,9 +129,18 @@ i.icon.mobile.fa.fa-bars {
   left: 0;
 }
 
+#sidebar_main {
+  position: absolute;
+  display: none;
+}
+
+#sidebar_main.is-active {
+  display: block;
+}
+
 a.link {
   font-size: 20px;
-  padding: 30px;
+  padding: 20px;
 }
 
 /* MEDIA QUERIES */
@@ -153,9 +168,14 @@ a.link {
   #shop_nav_mobile {
     display: none;
   }
-  #nav_sidebar {
-    display: none;
-  }
+}
+
+#shop_nav_mobile-toggle ~ #nav_sidebar li {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @media (max-width: 320px) {
@@ -163,21 +183,23 @@ a.link {
     display: none;
   }
 
-  #nav_sidebar {
+  /* div.home-container {
     display: none;
-  }
-  div.home-container {
-    display: none;
-  }
+  } */
 }
 
-@media (max-width: 580px) {
+@media (max-width: 800px) {
   #main_content {
     flex-direction: column;
     align-items: center;
   }
+
   #sidebar_main {
     width: 100%;
+    background-color: #f5ae02;
+    height: 100%;
+    z-index: 9999;
+
     /* display: none; */
   }
   #side_main {
@@ -196,6 +218,7 @@ a.link {
     padding: 0 20px;
     border-right: 1px solid;
     justify-content: center;
+    z-index: 999;
   }
 
   ul.nav-link.flexed-item {
@@ -204,14 +227,23 @@ a.link {
   div.flexed-item.nav-end {
     display: none;
   }
-  div.home-container {
+  /* div.home-container {
     display: none;
-  }
+  } */
   .shop-cart-icon {
     font-size: 0.8rem;
     color: rgb(151, 151, 151);
     margin-left: 30px;
     padding-right: 20px;
+  }
+  i.icon {
+    visibility: visible;
+  }
+}
+
+@media (min-width: 801px) {
+  #sidebar_main.is-active {
+    display: none;
   }
 }
 
@@ -232,7 +264,7 @@ a.link {
   justify-content: center;
 } */
 
-  .i.icon.mobile.fa.fa-bars {
+  /* i.icon {
     display: none;
-  }
+  } */
 }
