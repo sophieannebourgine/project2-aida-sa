@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const foodModel = require("../models/food");
 const userModel = require("../models/User");
+const cartModel = require("../models/Cart");
 
 //------ HOMEPAGE
 
@@ -32,17 +33,17 @@ router.post("/one-product/:id", (req, res) => {
 });
 
 router.patch("/cart", (req, res) => {
+  // a axios request has been sent by client
   const userID = req.session.currentUser._id;
   const prodId = req.body.prodId;
   const qty = req.body.qty;
-  console.log(req.body);
-
-  console.log("userID");
-  console.log(userID);
-  console.log("prodId");
-  console.log(prodId);
-  console.log("qty");
-  console.log(qty);
+  // console.log(req.body);
+  // console.log("userID");
+  // console.log(userID);
+  // console.log("prodId");
+  // console.log(prodId);
+  // console.log("qty");
+  // console.log(qty);
 
   res.send("@todo...");
 });
