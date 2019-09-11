@@ -123,14 +123,14 @@ router.post("/user", (req, res) => {
   const editUser = {
     firstname,
     lastname,
-    email,
-    role
+    email
   };
   userModel
-    .findByIdAndUpdate([req.session.currentUser]._id, editUser, {
+    .findByIdAndUpdate(req.session.currentUser._id, editUser, {
       new: true
     })
     .then(dbRes => {
+      req.session.currentUser = dbRes;
       res.locals.user = dbRes;
       res.redirect("/user");
     })
