@@ -1,7 +1,7 @@
 const express = require("express");
 const router = new express.Router();
 const foodModel = require("../models/food");
-const User = require("../models/User");
+const userModel = require("../models/User");
 
 //------ HOMEPAGE
 
@@ -15,7 +15,7 @@ router.get("/one-product/:id", (req, res) => {
   foodModel
     .findById(req.params.id)
     .then(dbRes => {
-      res.render("one_product", { food: dbRes, scripts: ["cart.js"] });
+      res.render("one_product", { food: dbRes });
     })
     .catch(dbErr => console.log(dbErr));
 });
@@ -95,13 +95,47 @@ router.get("/delete/:id", (req, res) => {
 //------------USER PROFILE PAGE
 
 router.get("/user", (req, res) => {
-  // User.find()
-  //   .then(dbRes => {
+  // console.log(res.locals.user);
   res.render("user");
-  //   })
-  //   .catch(dbErr => console.log(dbErr));
 });
 
+// router.get("/user", (req, res) => {
+//   userModel
+//     .find()
+//     .then(dbRes => {
+//       res.render("user", { user: dbRes });
+//     })
+//     .catch(dbErr => console.log(dbErr));
+// });
+
+// router.get("/user/:id", (req, res) => {
+//   userModel
+//     .findById(req.params.id)
+//     .then(dbRes => {
+//       res.render("user", { user: dbRes });
+//     })
+//     .catch(dbErr => console.log(dbErr));
+// });
+
+router.post("/user", (req, res) => {
+  console.log(req.session.currentUser);
+  const { firstname, lastname, email, role } = req.body;
+  const editUser = {
+    firstname,
+    lastname,
+    email,
+    role
+  };
+  userModel
+    .findByIdAndUpdate([req.session.currentUser]._id, editUser, {
+      new: true
+    })
+    .then(dbRes => {
+      res.locals.user = dbRes;
+      res.redirect("/user");
+    })
+    .catch(err => console.log(err));
+});
 //------------CART PAGE
 
 router.get("/cart", (req, res) => {
