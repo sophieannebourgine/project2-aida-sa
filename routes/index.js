@@ -15,7 +15,7 @@ router.get("/one-product/:id", (req, res) => {
   foodModel
     .findById(req.params.id)
     .then(dbRes => {
-      res.render("one_product", { food: dbRes });
+      res.render("one_product", { food: dbRes, scripts: ["cart.js"] });
     })
     .catch(dbErr => console.log(dbErr));
 });
@@ -29,6 +29,21 @@ router.post("/one-product/:id", (req, res) => {
       res.render("cart", { food: dbRes });
     })
     .catch(dbErr => console.log(dbErr));
+});
+
+router.patch("/cart", (req, res) => {
+  const userID = req.session.currentUser._id;
+  const prodId = req.body.prodId;
+  const qty = req.body.qty;
+  console.log(req.body);
+
+  console.log("userID");
+  console.log(userID);
+  console.log("prodId");
+  console.log(prodId);
+  console.log("qty");
+  console.log(qty);
+  res.send("@todo...");
 });
 
 //-------------- EDITER PRODUITS

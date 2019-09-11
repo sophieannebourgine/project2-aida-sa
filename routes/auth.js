@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 const User = require("../models/User");
+const Cart = require("../models/Cart");
 
 //------ SIGN UP
 
@@ -38,8 +39,23 @@ router.post("/signup", (req, res, next) => {
     email,
     password: hashPass
   })
-    .then(() => {
-      res.redirect("/");
+    .then(newUser => {
+      console.log(newUser);
+      console.log("newUser");
+      console.log("----------");
+
+      Cart.create({
+        user_id: newUser._id,
+        content: []
+      })
+        .then(newCart => {
+          console.log("newCart");
+          console.log(newCart);
+          res.redirect("/");
+        })
+        .catch(cartErr => {
+          console.log(cartErr);
+        });
     })
     .catch(error => {
       console.log(error);

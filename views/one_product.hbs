@@ -1,6 +1,8 @@
 <main id="main-content">
 
   <div class="sneak-img-container">
+    <input type="hidden" id="prod_id" value="{{food._id}}">
+
     <img src="{{food.image}}" alt="img-product" class="sneak-img">
 
 
@@ -15,13 +17,14 @@
 
       <div class="flexed-item">
         <select name="main-category" id="main_category" class="select sneak-select">
-          <option value="">How many ?</option>
-          <option value="">1</option>
-          <option value="">2</option>
-          <option value="">3</option>
+          <option value="-1">How many ?</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
         </select>
       </div>
-      <a href="" class="button-primary a-link">Add to cart <i class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
+      <a id="btn_add_cart" class="button-primary a-link">Add to cart <i
+          class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
 
     </div>
 
