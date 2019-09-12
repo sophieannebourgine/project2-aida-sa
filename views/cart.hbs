@@ -8,22 +8,17 @@
     {{/unless}}
 </div>
 
-
-
-
-
 {{!-- <div class="cart-row">
             <span class="cart-item cart-header cart-column">ITEM</span>
             <span class="cart-price cart-header cart-column">PRICE</span>
             <span class="cart-quantity cart-header cart-column">QUANTITY</span>
         </div> --}}
 
+{{#unless food}}
+
 <div class="one-product-container">
     <div class="opaq">
-
         <h3 class="section-header-title">MY CART</h3>
-
-
         <section class="container content-section">
             {{#each foods}}
             <div class="food-img-container">
@@ -60,5 +55,10 @@
 
 
             <div class="flex-button">
-                <button class="btn btn-primary btn-pick" type="button">PICK IT UP</button></div>
+                <button class="btn btn-primary btn-pick" type="button">PICK IT UP</button>
+            </div>
         </section>
+        {{/unless}}
+
+    </div>
+</div>

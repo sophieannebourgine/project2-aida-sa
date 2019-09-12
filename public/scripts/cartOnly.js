@@ -18,5 +18,3 @@ function getCartInfoFromDB() {
 getCartInfoFromDB();
 
 // window.addEventListener("DOMContentLoaded", ironCart.start);
-
-// .populate
