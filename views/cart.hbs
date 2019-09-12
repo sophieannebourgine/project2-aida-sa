@@ -25,30 +25,34 @@
 
 
         <section class="container content-section">
-
+            {{#each foods}}
             <div class="food-img-container">
-                {{!-- <img src="{{food.image}}" alt="img-product" class="sneak-img"> --}}
+
                 <div class="img-flex">
-                    <img src="https://res.cloudinary.com/duehv29iq/image/upload/v1568125328/morgan-sessions-k5zv-Hv4Kpc-unsplash_tpd7hx.jpg"
-                        alt="img-product" class="food-img">
+                    <img src="{{this.prodId.image}}" alt="img-product" class="food-img">
+                    {{!-- <img src="https://res.cloudinary.com/duehv29iq/image/upload/v1568125328/morgan-sessions-k5zv-Hv4Kpc-unsplash_tpd7hx.jpg" --}}
+                    {{!-- alt="img-product" class="food-img"> --}}
                 </div>
-                <input type="hidden" id="prod_id" value="{{food._id}}">
+                <input type="hidden" id="prod_id" value="{{this.prodId._id}}">
                 <div class="sneak-info">
                     <div class="sneak-info-header">
-                        <h1 class="sneak-name">Name:{{food.name}}</h1>
-                        <p class="sneak-price">Price{{food.price}}</p>
-                        <p class="sneak-ref">Qty {{food.qty}}</p>
+                        <h1 class="sneak-name">{{this.prodId.name}}</h1>
+                        <p id="price_cart" class="sneak-price">€{{this.prodId.price}}</p>
+                        <p id="qty_cart" class="sneak-ref">Quantity : {{this.qty}}</p>
 
                     </div>
                 </div>
             </div>
+            {{/each}}
+
             <div class="cart-items">
             </div>
             <hr class="hr">
             <div class="total-flex">
                 <div class="cart-total">
                     <strong class="cart-total-title">Total</strong>
-                    <span class="cart-total-price">€0</span>
+                    <span class="cart-total-price"> €
+                    </span>
                 </div>
             </div>
             <span class="pick-up">Pick up - Free</span>
