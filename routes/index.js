@@ -33,13 +33,7 @@ router.post("/one-product/:id", (req, res) => {
 });
 
 router.patch("/cart", (req, res) => {
-  // a axios request has been sent by client
   const userID = req.session.currentUser._id;
-  // const prodId = req.body.prodId;
-  // const qty = req.body.qty;
-  // const cart = { prodId: prodId, qty: qty };
-  // console.log("req.body", req.body);
-  // console.log("cart", cart);
   cartModel
     .updateOne({ user_id: userID }, { $push: { content: req.body } })
     .then(dbRes => {
@@ -48,13 +42,6 @@ router.patch("/cart", (req, res) => {
     .catch(err => {
       console.log(err);
     });
-  // console.log("userID");
-  // console.log(userID);
-  // console.log("prodId");
-  // console.log(prodId);
-  // console.log("qty");
-  // console.log(qty);
-
   res.send("it's ok");
 });
 
@@ -150,11 +137,16 @@ router.post("/user", (req, res) => {
 //------------CART PAGE
 
 router.get("/cart", (req, res) => {
-  // User.find()
-  //   .then(dbRes => {
-  res.render("cart");
-  //   })
-  //   .catch(dbErr => console.log(dbErr));
+  const userID = req.session.currentUser._id;
+  cartModel
+    .findOne({ user_id: userID })
+    .populate("content.prodId")
+    .then(dbRes => {
+      res.render("cart", { foods: dbRes.content });
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
 
 module.exports = router;
