@@ -2,6 +2,10 @@
   position: relative;
 }
 
+a {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 .header {
   width: 100%;
 }
@@ -77,6 +81,7 @@ h2.logo-item {
 .nav-end {
   align-items: center;
   margin-left: auto;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .nav-end-item:first-child {
@@ -100,6 +105,10 @@ i.icon {
   display: flex;
   align-items: center;
   width: 30px;
+}
+
+#quantity-total {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 #header_main .icon {

@@ -8,18 +8,51 @@
     {{/unless}}
 </div>
 
-<section class="container content-section">
-    <h3 class="section-header form-title">CART</h3>
-    <div class="cart-row">
-        <span class="cart-item cart-header cart-column">ITEM</span>
-        <span class="cart-price cart-header cart-column">PRICE</span>
-        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-    </div>
-    <div class="cart-items">
-    </div>
-    <div class="cart-total">
-        <strong class="cart-total-title">Total</strong>
-        <span class="cart-total-price">€0</span>
-    </div>
-    <button class="btn btn-primary btn-pick" type="button">PICK IT UP</button>
-</section>
+
+
+
+
+{{!-- <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div> --}}
+
+<div class="one-product-container">
+    <div class="opacity">
+        <h3 class="section-header form-title">MY CART</h3>
+
+
+        <section class="container content-section">
+
+            <div class="sneak-img-container">
+                {{!-- <img src="{{food.image}}" alt="img-product" class="sneak-img"> --}}
+                <div class="img-flex">
+                    <img src="https://res.cloudinary.com/duehv29iq/image/upload/v1568125328/morgan-sessions-k5zv-Hv4Kpc-unsplash_tpd7hx.jpg"
+                        alt="img-product" class="sneak-img">
+                </div>
+                <input type="hidden" id="prod_id" value="{{food._id}}">
+                <div class="sneak-info">
+                    <div class="sneak-info-header">
+                        <h1 class="sneak-name">Name:{{food.name}}</h1>
+                        <p class="sneak-price">Price{{food.price}}</p>
+                        <p class="sneak-ref">Qty {{food.qty}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="cart-items">
+            </div>
+
+            <div class="total-flex">
+                <div class="cart-total">
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">€0</span>
+                </div>
+            </div>
+            <span class="pick-up">Pick up - Free</span>
+
+
+            <div class="flex-button">
+                <button class="btn btn-primary btn-pick" type="button">PICK IT UP</button></div>
+        </section>
