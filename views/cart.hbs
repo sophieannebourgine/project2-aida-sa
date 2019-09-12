@@ -1,7 +1,7 @@
 <div class="cart-container">
     <div class="square"> </div>
     {{#unless food}}
-    <span class="empty-cart"> You have never placed <br>any order yet.<br><br> Let's check <br>all the products!
+    <span class="empty-cart"> You have never added <br>any product yet.<br><br> Let's check <br>all the products!
         <div class="button">
             <a href="/products/all"> <button class="button-view">View products</button></div></a>
     </span>
@@ -19,17 +19,18 @@
         </div> --}}
 
 <div class="one-product-container">
-    <div class="opacity">
-        <h3 class="section-header form-title">MY CART</h3>
+    <div class="opaq">
+
+        <h3 class="section-header-title">MY CART</h3>
 
 
         <section class="container content-section">
 
-            <div class="sneak-img-container">
+            <div class="food-img-container">
                 {{!-- <img src="{{food.image}}" alt="img-product" class="sneak-img"> --}}
                 <div class="img-flex">
                     <img src="https://res.cloudinary.com/duehv29iq/image/upload/v1568125328/morgan-sessions-k5zv-Hv4Kpc-unsplash_tpd7hx.jpg"
-                        alt="img-product" class="sneak-img">
+                        alt="img-product" class="food-img">
                 </div>
                 <input type="hidden" id="prod_id" value="{{food._id}}">
                 <div class="sneak-info">
@@ -43,7 +44,7 @@
             </div>
             <div class="cart-items">
             </div>
-
+            <hr class="hr">
             <div class="total-flex">
                 <div class="cart-total">
                     <strong class="cart-total-title">Total</strong>
