@@ -7,6 +7,9 @@
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form-header {
@@ -63,7 +66,7 @@
 }
 
 .button-link-form {
-  /* color: rgb(52, 52, 255); */
+  color: rgb(52, 52, 255);
   color: black;
   padding-bottom: 0.1rem;
 }
