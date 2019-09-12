@@ -35,9 +35,19 @@ router.post("/one-product/:id", (req, res) => {
 router.patch("/cart", (req, res) => {
   // a axios request has been sent by client
   const userID = req.session.currentUser._id;
-  const prodId = req.body.prodId;
-  const qty = req.body.qty;
-  // console.log(req.body);
+  // const prodId = req.body.prodId;
+  // const qty = req.body.qty;
+  // const cart = { prodId: prodId, qty: qty };
+  // console.log("req.body", req.body);
+  // console.log("cart", cart);
+  cartModel
+    .updateOne({ user_id: userID }, { $push: { content: req.body } })
+    .then(dbRes => {
+      console.log("here", dbRes);
+    })
+    .catch(err => {
+      console.log(err);
+    });
   // console.log("userID");
   // console.log(userID);
   // console.log("prodId");
@@ -45,7 +55,7 @@ router.patch("/cart", (req, res) => {
   // console.log("qty");
   // console.log(qty);
 
-  res.send("@todo...");
+  res.send("it's ok");
 });
 
 //-------------- EDITER PRODUITS

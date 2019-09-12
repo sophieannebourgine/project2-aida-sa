@@ -17,7 +17,7 @@ router.post("/signup", (req, res, next) => {
   const lastname = req.body.lastname;
   const email = req.body.email;
   const password = req.body.password;
-
+  console.log(req.body);
   if (firstname === "" || password === "") {
     res.render("signup", { msg: { text: "This email adress is already use" } });
     return;
@@ -43,11 +43,7 @@ router.post("/signup", (req, res, next) => {
       console.log(newUser);
       console.log("newUser");
       console.log("----------");
-
-      Cart.create({
-        user_id: newUser._id,
-        content: []
-      })
+      Cart.create({ user_id: newUser._id })
         .then(newCart => {
           console.log("newCart");
           console.log(newCart);
