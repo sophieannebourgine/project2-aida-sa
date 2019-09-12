@@ -3,7 +3,7 @@
 
 const ironCart = (function() {
   "use strict";
-
+  console.log("hello");
   function updateCart() {
     // nombre d'article dans le panier
     const cartCount = Number(
@@ -19,9 +19,17 @@ const ironCart = (function() {
   }
 
   function totalPrice() {
-    var price = document.getElementsById("price_cart");
-    var total_qty = document.getElementsById("qty_cart");
+    var priceElement = document.getElementById("price_cart");
+    var totalQtyElement = document.getElementById("qty_cart");
+    var priceValue = Number(priceElement.textContent.split("")[1]);
+    var qtyValue = totalQtyElement.textContent.split("");
+    // console.log(priceValue);
+    // console.log(qtyValue[qtyValue.length - 1]);
+    var total = priceValue * Number(qtyValue[qtyValue.length - 1]);
+    console.log("total", total);
+    return total;
   }
+  totalPrice();
 
   function updateDatabase(prodId, qty) {
     axios
