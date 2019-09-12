@@ -12,10 +12,15 @@ const ironCart = (function() {
     // sélection de la qantité d'un produit
     const valToAdd = Number(document.getElementById("main_qty").value);
     //addition de la quantité ajouté et de celle présente dans le panier
-    const newQty = cartCount + valToAdd;
     const prodId = document.getElementById("prod_id").value;
-    document.getElementById("quantity-total").textContent = newQty;
-    updateDatabase(prodId, newQty);
+    document.getElementById("quantity-total").textContent =
+      cartCount + valToAdd;
+    updateDatabase(prodId, valToAdd);
+  }
+
+  function totalPrice() {
+    var price = document.getElementsById("price_cart");
+    var total_qty = document.getElementsById("qty_cart");
   }
 
   function updateDatabase(prodId, qty) {

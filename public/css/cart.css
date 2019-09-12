@@ -18,7 +18,7 @@ h3 {
   color: black;
 }
 .opaq {
-  height: 70%;
+  height: 1000px;
   background-color: antiquewhite;
   width: 700px;
 }
@@ -156,6 +156,7 @@ h3 {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
+  padding: 10px;
 }
 
 .sneak-price {
