@@ -24,7 +24,7 @@ router.post("/signup", (req, res, next) => {
   }
   User.findOne({ firstname: firstname }).then(user => {
     if (!user) {
-      res.render("signup", { msg: { text: "Incorrect email or password" } });
+      res.render("signup", { msg: { text: "i" } });
       return;
     }
   });
@@ -89,7 +89,7 @@ router.post("/signin", (req, res, next) => {
 
         res.redirect("/");
       } else {
-        res.render("signin", { msg: { text: "Incorrect password" } });
+        res.render("signin", { msg: { text: "Incorrect Email or password" } });
       }
     })
     .catch(error => {
