@@ -1,3 +1,26 @@
+// const btnBasket = document.getElementById("fa-shopping-cart");
+// const addToCart = document.getElementById("btn_add_cart");
+// const elementQty = document.getElementById("product-qty");
+// const cartBtn = document.getElementById("checkout");
+// addToCart.onclick = evt => {
+//   // const elementQty = document.getElementById ("product-qty");
+//   var currentCart = {
+//     nbItems: 0,
+//     totalPrice: 0,
+//     productsInKart: []
+//   };
+//   evt.preventDefault();
+//   const elementRef = document.getElementById("product-ref");
+//   const elementPrice = document.getElementById("product-price");
+//   const productSize = document.getElementById("main-size");
+//   const productId = document.getElementById("one-product");
+//   const productName = document.getElementById("product-name");
+//   const productImg = document.getElementById("product-img");
+//   currentCart.nbItems += 1;
+//   currentCart.totalPrice += Number(elementPrice.innerHTML.replace(" €", ""));
+
+// };
+
 // const cartBtn = document.getElementById("checkout");
 // const cartDetails = document.getElementById("cart-details");
 // const recapCart = document.getElementById("cart-small-summary");

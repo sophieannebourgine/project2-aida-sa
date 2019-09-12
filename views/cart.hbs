@@ -1,42 +1,25 @@
 <div class="cart-container">
     <div class="square"> </div>
+    {{#unless food}}
     <span class="empty-cart"> You have never placed <br>any order yet.<br><br> Let's check <br>all the products!
         <div class="button">
             <a href="/products/all"> <button class="button-view">View products</button></div></a>
     </span>
-
-
+    {{/unless}}
 </div>
 
-<div class="big-container manage-products-wrapper">
-    <h3 class="manage-products-title">Found something good ? </h3>
-    <table class="product-manage-table">
-        <thead>
-            <tr class="table-row">
-                <th class="table-head">Image</th>
-                <th class="table-head">Name</th>
-                <th class="table-head">Ref</th>
-                <th class="table-head">Price</th>
-                <th class="table-head">Quantity</th>
-                <th class="table-head">Edit</th>
-                <th class="table-head">Delete</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            {{#each food}}
-            <tr class="table-row">
-                {{> dashboard_food_row}}
-            </tr>
-            {{/each}}
-            {{#unless food}}
-            <tr>
-                <td colspan="6">sorry no products yet</td>
-            </tr>
-            {{/unless}}
-        </tbody>
-    </table>
-
-    <a href="/" class="button-primary a-link" type="submit">Come pick them up ASAP
-        <i class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
-</div>
+<section class="container content-section">
+    <h3 class="section-header form-title">CART</h3>
+    <div class="cart-row">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </div>
+    <div class="cart-items">
+    </div>
+    <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price">€0</span>
+    </div>
+    <button class="btn btn-primary btn-pick" type="button">PICK IT UP</button>
+</section>
