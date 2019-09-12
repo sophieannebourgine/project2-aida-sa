@@ -7,27 +7,29 @@
 
 
     <div class="one-product-container">
-      <div class="sneak-info">
-        <div class="sneak-info-header">
-          <h1 class="sneak-name">{{food.name}}</h1>
-          <p class="sneak-description">{{food.description}}</p>
-          <p class="sneak-ref">Ref. {{food.ref}}</p>
+      <div class="opacity">
+        <div class="sneak-info">
+          <div class="sneak-info-header">
+            <h1 class="sneak-name">{{food.name}}</h1>
+            <p class="sneak-description">{{food.description}}</p>
+            <p class="sneak-ref">Ref. {{food.ref}}</p>
+          </div>
         </div>
-      </div>
 
-      <div class="flexed-item">
-        <select name="main-category" id="main_category" class="select sneak-select">
-          <option value="0">How many ?</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
+
+        <div class="flexed-item">
+          <select name="main-category" id="main_category" class="select sneak-select">
+            <option value="0">How many ?</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <a id="btn_add_cart" class="button-primary a-link">Add to cart <i
+            class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
+
       </div>
-      <a id="btn_add_cart" class="button-primary a-link">Add to cart <i
-          class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
 
     </div>
-
   </div>
-
 </main>
