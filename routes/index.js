@@ -149,12 +149,15 @@ router.get("/cart", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-//--------------CART VALIDATED PAGE
-=======
->>>>>>> 6d8ca14229fe6d5ebe1617ce193d2b87d6d257a8
+//-------------ORDER VALIDATED PAGE
+
 router.get(["/order-validated"], (req, res) => {
-  res.render("order-validated");
+  const user = req.session.currentUser;
+  cartModel
+    .findOneAndUpdate({ user_id: user._id }, { content: [] }, { new: true })
+    .then(cart => {
+      res.render("order-validated").catch(cartErr => console.log(cartErr));
+    });
 });
 
 module.exports = router;

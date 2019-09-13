@@ -42,13 +42,13 @@ router.post("/signup", (req, res, next) => {
     password: hashPass
   })
     .then(newUser => {
-      // console.log(newUser);
-      // console.log("newUser");
-      // console.log("----------");
+      console.log(newUser);
+      console.log("newUser");
+      console.log("----------");
       Cart.create({ user_id: newUser._id })
         .then(newCart => {
-          // console.log("newCart");
-          // console.log(newCart);
+          console.log("newCart");
+          console.log(newCart);
           res.redirect("/auth/signin");
         })
         .catch(cartErr => {

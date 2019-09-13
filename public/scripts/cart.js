@@ -3,9 +3,9 @@
 
 const ironCart = (function() {
   "use strict";
-  console.log("hello");
 
   function updateCart() {
+    console.log("clicked");
     // nombre d'article dans le panier
     const cartCount = Number(
       document.getElementById("quantity-total").textContent
@@ -45,9 +45,11 @@ const ironCart = (function() {
   }
 
   function start() {
+    console.log(document.getElementById("btn_add_cart"));
     document.getElementById("btn_add_cart").onclick = updateCart;
   }
   return { start };
 })();
 
+window.addEventListener("DOMContentLoaded", ironCart.start);
 // .populate
