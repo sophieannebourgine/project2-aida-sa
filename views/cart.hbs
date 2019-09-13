@@ -32,6 +32,9 @@
                         <h1 class="sneak-name">{{this.prodId.name}}</h1>
                         <p class="sneak-price price_cart">€{{this.prodId.price}}</p>
                         <p class="sneak-ref qty_cart">Quantity : {{this.qty}}</p>
+                        <hr>
+                        <a href="/delete-item/cart/{{../cartId}}/product/{{this.prodId._id}}" id="delete-sneaker"
+                            class="fa fa-trash table-icon" aria-hidden="true"></a>
 
                     </div>
                 </div>
