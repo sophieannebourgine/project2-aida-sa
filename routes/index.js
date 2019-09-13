@@ -149,11 +149,8 @@ router.get("/cart", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-=======
 //-------------ORDER VALIDATED PAGE
 
->>>>>>> 8b1f3fe54b16b76c333bccc49de606f39dd3e549
 router.get(["/order-validated"], (req, res) => {
   const user = req.session.currentUser;
   cartModel
