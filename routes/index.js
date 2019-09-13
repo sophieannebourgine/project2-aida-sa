@@ -149,10 +149,6 @@ router.get("/cart", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-//--------------CART VALIDATED PAGE
-=======
->>>>>>> 6d8ca14229fe6d5ebe1617ce193d2b87d6d257a8
 router.get(["/order-validated"], (req, res) => {
   res.render("order-validated");
 });
