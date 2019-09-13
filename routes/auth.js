@@ -98,7 +98,7 @@ router.post("/signin", (req, res, next) => {
         { content: [] },
         { new: true }
       )
-        .then(cart => console.log(cart))
+        .then(cart => console.log("cart"))
         .catch(cartErr => console.log(cartErr));
     })
     .catch(error => {
@@ -116,16 +116,16 @@ router.get("/logout", (req, res, next) => {
 });
 
 router.post("/cartInfos", (req, res, next) => {
-  let UserId = req.session.currentUser._id;
-  console.log("---------------");
-  console.log(req.session.currentUser);
-  Cart.findOne({ user_id: UserId })
-    .then(cart => {
-      console.log("************");
-      console.log(cart);
-      res.send(cart);
-    })
-    .catch(Err => console.log(Err));
+  if (req.session.currentUser) {
+    let UserId = req.session.currentUser._id;
+    Cart.findOne({ user_id: UserId })
+      .then(cart => {
+        // console.log("************");
+        // console.log(cart);
+        res.send(cart);
+      })
+      .catch(Err => console.log(Err));
+  }
 });
 
 module.exports = router;

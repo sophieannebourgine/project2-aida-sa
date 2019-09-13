@@ -142,11 +142,31 @@ router.get("/cart", (req, res) => {
     .findOne({ user_id: userID })
     .populate("content.prodId")
     .then(dbRes => {
-      res.render("cart", { foods: dbRes.content, scripts: ["cart.js"] });
+      console.log("---------", dbRes._id);
+      console.log("*********", dbRes.content);
+      res.render("cart", {
+        foods: dbRes.content,
+        cartId: dbRes._id,
+        scripts: ["cart.js"]
+      });
     })
     .catch(err => {
       console.log(err);
     });
+});
+router.get("/delete-item/cart/:cartId/product/:prodId", (req, res) => {
+  cartModel
+    .findById(req.params.cartId)
+    .then(dbRes => {
+      const arr = dbRes.content.filter(
+        content => content.prodId.toString() !== req.params.prodId
+      );
+      cartModel
+        .findByIdAndUpdate(req.params.cartId, { content: arr })
+        .then(() => res.redirect("/cart"))
+        .catch(err => console.log(err));
+    })
+    .catch(err => console.log(err));
 });
 
 //-------------ORDER VALIDATED PAGE
