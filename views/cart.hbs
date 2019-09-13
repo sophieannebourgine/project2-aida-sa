@@ -1,12 +1,10 @@
 <div class="cart-container">
     {{#unless foods}}
     <div class="square"> </div>
-
     <span class="empty-cart"> You have never added <br>any product yet.<br><br> Let's check <br>all the products!
         <div class="button">
             <a href="/products/all"> <button class="button-view">View products</button></div></a>
     </span>
-
 </div>
 {{/unless}}
 {{!-- <div class="cart-row">
@@ -16,7 +14,6 @@
         </div> --}}
 
 {{#if foods}}
-
 <div class="one-product-container">
     <div class="opaq">
         <h3 class="section-header-title">MY CART</h3>
@@ -39,11 +36,11 @@
                     </div>
                 </div>
             </div>
+            <hr class="hr">
             {{/each}}
 
             <div class="cart-items">
             </div>
-            <hr class="hr">
             <div class="total-flex">
                 <div class="cart-total">
                     <strong class="cart-total-title">Total</strong>
@@ -60,7 +57,8 @@
                         UP</button></a>
             </div>
         </section>
-        {{/if}}
+
 
     </div>
 </div>
+{{/if}}
