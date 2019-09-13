@@ -1,0 +1,71 @@
+.validated-container {
+  height: calc(100vh - (84px));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  width: 100%;
+  background-image: url("https://res.cloudinary.com/duehv29iq/image/upload/v1568020400/igor-starkov-j3e5c72LAuc-unsplash_t4dzsg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.button-view {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: #f5ae02;
+  opacity: 1;
+  color: white;
+  font-size: 18px;
+  font-weight: bolder;
+  z-index: 9999;
+  width: 100px;
+}
+
+.button-view:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+.square-validated {
+  background-color: #f5ae02;
+  opacity: 0.8;
+  min-width: 470px;
+  max-width: 270px;
+  min-height: 270px;
+  max-height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.bloc-validated {
+  padding: 60px;
+  color: white;
+  font-size: 23px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  z-index: 999;
+  text-align: center;
+}

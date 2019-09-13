@@ -18,7 +18,7 @@ h3 {
   color: black;
 }
 .opaq {
-  height: 1000px;
+  /* height: 1000px; */
   background-color: antiquewhite;
   width: 700px;
 }
