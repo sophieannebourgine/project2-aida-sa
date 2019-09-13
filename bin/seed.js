@@ -1,128 +1,7 @@
 const foodModel = require("../models/food");
-const cloudinary = require("./../config/cloudinary");
-const mongoose = require("mongoose");
+const products = require("./products.json");
 
-mongoose.connect("mongodb://localhost/food", { useNewUrlParser: true });
-
-const products = [
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  },
-  {
-    name: "",
-    ref: "",
-    descrption: "",
-    price: "",
-    stock: "",
-    category: "", //sweet salt ou drink
-    image: ""
-  }
-];
+console.log(products);
 
 function insertProducts() {
   foodModel
@@ -139,5 +18,5 @@ function deleteAllProducts() {
 }
 
 // run this file ONCE with : node bin/seed.js
-insertProducts(); // add all products
+insertProducts(products); // add all products
 // deleteAllProducts(); // remove all products

@@ -1,0 +1,90 @@
+[
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568124468/jonathan-borba-yZOfNnI2PA0-unsplash_aqbzqp.jpg",
+    "name": "Coca Cola",
+    "ref": "dietTomorrow",
+    "description": "5 sugars pieces in a bottle",
+    "price": "2",
+    "category": "drink"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568124514/eiliv-sonas-aceron-VfHsq5WRTHY-unsplash_a9qwri.jpg",
+    "name": "Iced tea",
+    "ref": "onDiet",
+    "description": "no sugar",
+    "price": "2",
+    "category": "drink"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568123555/nathan-dumlao-Y3AqmbmtLQI-unsplash_hxhkem.jpg",
+    "name": "Latte",
+    "ref": "straightToAss",
+    "description": "2 sugars pieces in a cup",
+    "price": "2",
+    "category": "drink"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568123878/sharon-chen-nsTu5pzb84M-unsplash_eslagp.jpg",
+    "name": "Carrot cake",
+    "ref": "CakeForRabbit",
+    "description": "100g sugar in a cake",
+    "price": "2",
+    "category": "sweet"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568125369/erol-ahmed-AmzKuEnr1VY-unsplash_dp0xow.jpg",
+    "name": "Cookie",
+    "ref": "straightToAsss",
+    "description": "50g sugar in a cookie",
+    "price": "2",
+    "category": "sweet"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568124613/taylor-kiser-1su-ueyLoe0-unsplash_vbmcuu.jpg",
+    "name": "Chocolate fondant",
+    "ref": "Yum",
+    "description": "100g sugar in a cake",
+    "price": "2",
+    "category": "sweet"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568124838/emiliano-vittoriosi-ONQ86GlHs3c-unsplash_gsrkge.jpg",
+    "name": "Chips",
+    "ref": "BigBelly",
+    "description": "Let just taco about it",
+    "price": "2",
+    "category": "salt"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568124932/luke-johnson-oaPjh0fMsEg-unsplash_h0x8nb.jpg",
+    "name": "Guacamole burger",
+    "ref": "yummy",
+    "description": "Handmade burger",
+    "price": "12",
+    "category": "salt"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568125003/freddy-g-m3OuPu9oTuY-unsplash_y23yvd.jpg",
+    "name": "Fresh salad",
+    "ref": "HealthyBelly",
+    "description": "Cherry tomatoes, sald, orange",
+    "price": "11",
+    "category": "salt"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568125056/jason-leung-kvoVmMHHM9A-unsplash_s3qv8h.jpg",
+    "name": "Oysters",
+    "ref": "seafood",
+    "description": "Many, but not all, oysters are in the superfamily Ostreoidea. ",
+    "price": "19",
+    "category": "salt"
+  },
+  {
+    "image": "https://res.cloudinary.com/duehv29iq/image/upload/v1568125328/morgan-sessions-k5zv-Hv4Kpc-unsplash_tpd7hx.jpg",
+    "name": "Tea",
+    "ref": "WithQueen",
+    "description": "THE Queen normally only invites a select few VIPs to have tea with her at Buckingham Palace",
+    "price": "5",
+    "category": "drink"
+  }
+]
