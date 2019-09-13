@@ -142,7 +142,7 @@ router.get("/cart", (req, res) => {
     .findOne({ user_id: userID })
     .populate("content.prodId")
     .then(dbRes => {
-      res.render("cart", { foods: dbRes.content });
+      res.render("cart", { foods: dbRes.content, scripts: ["cart.js"] });
     })
     .catch(err => {
       console.log(err);

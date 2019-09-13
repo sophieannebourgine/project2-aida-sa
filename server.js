@@ -79,6 +79,14 @@ app.use(setCurrentUser);
 app.use(checkloginStatus);
 app.use(eraseSessionMessage());
 
+hbs.registerHelper("total", function(foods) {
+  let total = 0;
+  foods.forEach(food => {
+    total += food.prodId.price * food.qty;
+  });
+  return total;
+});
+
 // Getting/Using router(s)
 
 const basePageRouter = require("./routes/index");

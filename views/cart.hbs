@@ -8,22 +8,17 @@
     {{/unless}}
 </div>
 
-
-
-
-
 {{!-- <div class="cart-row">
             <span class="cart-item cart-header cart-column">ITEM</span>
             <span class="cart-price cart-header cart-column">PRICE</span>
             <span class="cart-quantity cart-header cart-column">QUANTITY</span>
         </div> --}}
 
+{{#unless food}}
+
 <div class="one-product-container">
     <div class="opaq">
-
         <h3 class="section-header-title">MY CART</h3>
-
-
         <section class="container content-section">
             {{#each foods}}
             <div class="food-img-container">
@@ -37,8 +32,8 @@
                 <div class="sneak-info">
                     <div class="sneak-info-header">
                         <h1 class="sneak-name">{{this.prodId.name}}</h1>
-                        <p id="price_cart" class="sneak-price">€{{this.prodId.price}}</p>
-                        <p id="qty_cart" class="sneak-ref">Quantity : {{this.qty}}</p>
+                        <p class="sneak-price price_cart">€{{this.prodId.price}}</p>
+                        <p class="sneak-ref qty_cart">Quantity : {{this.qty}}</p>
 
                     </div>
                 </div>
@@ -51,7 +46,8 @@
             <div class="total-flex">
                 <div class="cart-total">
                     <strong class="cart-total-title">Total</strong>
-                    <span class="cart-total-price"> €
+                    <span class="cart-total-price">
+                        {{total foods}} €
                     </span>
                 </div>
             </div>
@@ -59,6 +55,10 @@
 
 
             <div class="flex-button">
-                <a href="/order-validated" <button class="btn btn-primary btn-pick" type="button">PICK IT
-                    UP</button></a></div>
+                <button class="btn btn-primary btn-pick" type="button">PICK IT UP</button>
+            </div>
         </section>
+        {{/unless}}
+
+    </div>
+</div>
