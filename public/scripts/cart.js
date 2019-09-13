@@ -50,6 +50,4 @@ const ironCart = (function() {
   return { start };
 })();
 
-window.addEventListener("DOMContentLoaded", ironCart.start);
-
 // .populate

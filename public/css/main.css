@@ -10,6 +10,8 @@
 @import "./one-product.css";
 @import "./home.css";
 @import "./cart.css";
+@import "./order-validated.css";
+
 @import url("https://fonts.googleapis.com/css?family=Faster+One|Oswald:300,400,500,700|Source+Sans+Pro:300,400,600,700&display=swap");
 
 * {
