@@ -17,17 +17,19 @@ router.post("/signup", (req, res, next) => {
   const lastname = req.body.lastname;
   const email = req.body.email;
   const password = req.body.password;
-  console.log(req.body);
-  if (firstname === "" || password === "") {
-    res.render("signup", { msg: { text: "This email adress is already use" } });
-    return;
-  }
-  User.findOne({ firstname: firstname }).then(user => {
-    if (!user) {
-      res.render("signup", { msg: { text: "Incorrect email or password" } });
-      return;
-    }
-  });
+  // console.log(req.body);
+  // if (firstname === "" || password === "") {
+  //   res.render("signup", { msg: { text: "This email adress is already use" } });
+  //   return;
+  // }
+  // User.findOne({ email: email }).then(user => {
+  //   if (!user) {
+  //     res.render("signup", {
+  //       msg: { text: "The user already exists. PLease sign in" }
+  //     });
+  //     return;
+  //   }
+  // });
 
   const salt = bcrypt.genSaltSync(bcryptSalt);
   console.log("----->", password);
@@ -40,14 +42,14 @@ router.post("/signup", (req, res, next) => {
     password: hashPass
   })
     .then(newUser => {
-      console.log(newUser);
-      console.log("newUser");
-      console.log("----------");
+      // console.log(newUser);
+      // console.log("newUser");
+      // console.log("----------");
       Cart.create({ user_id: newUser._id })
         .then(newCart => {
-          console.log("newCart");
-          console.log(newCart);
-          res.redirect("/");
+          // console.log("newCart");
+          // console.log(newCart);
+          res.redirect("/auth/signin");
         })
         .catch(cartErr => {
           console.log(cartErr);
@@ -70,7 +72,7 @@ router.post("/signin", (req, res, next) => {
 
   if (theEmail === "" || thePassword === "") {
     res.render("signin", {
-      msg: { text: "Please enter both, username and password to sign up." }
+      msg: { text: "Please enter both, username and password to sign in" }
     });
     return;
   }
@@ -89,7 +91,7 @@ router.post("/signin", (req, res, next) => {
 
         res.redirect("/");
       } else {
-        res.render("signin", { msg: { text: "Incorrect password" } });
+        res.render("signin", { msg: { text: "Incorrect email or password" } });
       }
       Cart.findOneAndUpdate(
         { user_id: user._id },

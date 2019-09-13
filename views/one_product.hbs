@@ -18,16 +18,19 @@
 
 
         <div class="flexed-item">
+          {{#if isLoggedIn}}
           <select name="main-qty" id="main_qty" class="select sneak-select">
             {{!-- <option value="0">How many ?</option> --}}
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
+          {{/if}}
         </div>
+        {{#if isLoggedIn}}
         <a id="btn_add_cart" class="button-primary a-link">Add to cart <i
             class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
-
+        {{/if}}
       </div>
 
     </div>

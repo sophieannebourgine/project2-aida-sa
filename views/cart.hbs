@@ -1,20 +1,21 @@
 <div class="cart-container">
+    {{#unless foods}}
     <div class="square"> </div>
-    {{#unless food}}
+
     <span class="empty-cart"> You have never added <br>any product yet.<br><br> Let's check <br>all the products!
         <div class="button">
             <a href="/products/all"> <button class="button-view">View products</button></div></a>
     </span>
-    {{/unless}}
-</div>
 
+</div>
+{{/unless}}
 {{!-- <div class="cart-row">
             <span class="cart-item cart-header cart-column">ITEM</span>
             <span class="cart-price cart-header cart-column">PRICE</span>
             <span class="cart-quantity cart-header cart-column">QUANTITY</span>
         </div> --}}
 
-{{#unless food}}
+{{#if foods}}
 
 <div class="one-product-container">
     <div class="opaq">
@@ -55,10 +56,11 @@
 
 
             <div class="flex-button">
-                <button class="btn btn-primary btn-pick" type="button">PICK IT UP</button>
+                <a href="/order-validated"><button class="btn btn-primary btn-pick" type="button">PICK IT
+                        UP</button></a>
             </div>
         </section>
-        {{/unless}}
+        {{/if}}
 
     </div>
 </div>

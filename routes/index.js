@@ -149,4 +149,9 @@ router.get("/cart", (req, res) => {
     });
 });
 
+//--------------CART VALIDATED PAGE
+router.get(["/order-validated"], (req, res) => {
+  res.render("order-validated");
+});
+
 module.exports = router;
